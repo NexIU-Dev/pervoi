@@ -1,0 +1,89 @@
+---
+import '../styles/global.css';
+
+const base = import.meta.env.BASE_URL;
+const image = (name: string) => `${base}images/${name}`;
+const wa = (subject: string) => `https://wa.me/5512996118050?text=${encodeURIComponent(`Olá! Vim pelo site da PerVoí e gostaria de conversar sobre ${subject}.`)}`;
+const instagram = 'https://www.instagram.com/pervoibeleza/';
+const maps = 'https://www.google.com/maps/search/?api=1&query=Av.+Dr.+Jo%C3%A3o+Baptista+Soares+de+Queiroz+J%C3%BAnior,+2211,+Jardim+das+Ind%C3%BAstrias,+S%C3%A3o+Jos%C3%A9+dos+Campos,+SP';
+const works = [
+  { src: 'tons-quentes.jpg', width: 640, height: 640, label: 'Nuances quentes', alt: 'Cliente da PerVoí com cabelo longo e reflexos quentes', url: 'https://www.instagram.com/pervoibeleza/p/DcPjh2ERVcN/' },
+  { src: 'loiro-movimento.jpg', width: 561, height: 640, label: 'Luz & movimento', alt: 'Trabalho de loiro com ondas e mechas claras da PerVoí', url: 'https://www.instagram.com/pervoibeleza/p/Ddcet04Rbtb/' },
+  { src: 'mega-portrait.jpg', width: 480, height: 640, label: 'Comprimento', alt: 'Cliente da PerVoí exibindo cabelo longo com mechas claras', url: 'https://www.instagram.com/pervoibeleza/p/DbnvVgAkRX-/' },
+  { src: 'loiro-longo.jpg', width: 600, height: 640, label: 'Loiro em ondas', alt: 'Cabelo loiro longo e ondulado fotografado na PerVoí', url: 'https://www.instagram.com/pervoibeleza/p/DcZabvdq2Cm/' },
+];
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2b190f" />
+    <meta name="description" content="PerVoí em São José dos Campos. Loiros e mega hair de alto padrão, com beleza, estética, noiva e spa em um só lugar. Conheça trabalhos reais e fale com a equipe." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content="PerVoí | Loiros e Mega Hair em São José dos Campos" />
+    <meta property="og:description" content="Loiros e mega hair de alto padrão. Descubra a PerVoí em São José dos Campos." />
+    <link rel="icon" type="image/jpeg" href={image('logo-instagram.jpg')} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&display=swap" rel="stylesheet" />
+    <title>PerVoí | Loiros e Mega Hair em São José dos Campos</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header" id="inicio">
+      <div class="header-inner">
+        <a class="wordmark" href="#inicio" aria-label="PerVoí, voltar ao início">PERVOÍ<span>HAIR • BEAUTY • SPA</span></a>
+        <nav class="desktop-nav" aria-label="Navegação principal"><a href="#filosofia">A PerVoí</a><a href="#especialidades">Especialidades</a><a href="#trabalhos">Trabalhos</a><a href="#casa">O espaço</a></nav>
+        <a class="header-book" href={wa('um horário')} target="_blank" rel="noopener noreferrer">AGENDAR <span aria-hidden="true">↗</span></a>
+        <details class="mobile-nav"><summary aria-label="Abrir menu"><span></span><span></span></summary><nav aria-label="Navegação móvel"><a href="#filosofia">A PerVoí</a><a href="#especialidades">Especialidades</a><a href="#trabalhos">Trabalhos</a><a href="#casa">O espaço</a><a href={wa('um horário')} target="_blank" rel="noopener noreferrer">Agendar ↗</a></nav></details>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero" aria-labelledby="hero-title">
+        <img class="hero-image" src={image('loiro-portrait-hq.jpg')} width="1537" height="1791" alt="Cliente da PerVoí com loiro longo e ondulado" fetchpriority="high" />
+        <div class="hero-shade"></div>
+        <div class="hero-top"><span>BELEZA PARA SER VIVIDA</span><span>JARDIM DAS INDÚSTRIAS · SJC</span></div>
+        <div class="hero-main"><p class="hero-eyebrow">LOIROS & MEGA HAIR DE ALTO PADRÃO</p><h1 id="hero-title">PerVoí</h1><div class="hero-line"><p>Cor, movimento e novas possibilidades para o seu cabelo.</p><a href={wa('loiros e mega hair')} target="_blank" rel="noopener noreferrer">CONVERSE COM A GENTE <span aria-hidden="true">↗</span></a></div></div>
+        <a class="hero-scroll" href="#filosofia" aria-label="Descer para conhecer a PerVoí">↓</a>
+      </section>
+
+      <section class="intro" id="filosofia" aria-labelledby="intro-title"><div class="section-shell intro-grid"><span class="eyebrow">01 / A PERVOÍ</span><h2 id="intro-title">Seu cabelo conta <em>uma história.</em><br />A gente cuida do próximo capítulo.</h2><div class="intro-copy"><p>Na PerVoí, o salão encontra o cuidado com o bem-estar. Um endereço em São José dos Campos para quem busca loiros, mega hair e tempo para si.</p><a class="text-link" href="#especialidades">CONHEÇA AS ESPECIALIDADES <span aria-hidden="true">↗</span></a></div></div></section>
+
+      <section class="statement" aria-label="Loiros e mega hair"><div class="statement-image"><img src={image('loiro-movimento.jpg')} width="561" height="640" alt="Cabelo loiro ondulado criado na PerVoí, visto de costas" loading="lazy" /></div><div class="statement-overlay"><span>PERVOÍ / HAIR STUDIO</span><p>O cabelo muda.<br /><em>A forma de se ver também.</em></p><span>LOIROS · MEGA HAIR · CUIDADO</span></div></section>
+
+      <section class="specialties" id="especialidades" aria-labelledby="specialties-title"><div class="section-shell"><div class="section-heading"><span class="eyebrow">02 / ESPECIALIDADES</span><h2 id="specialties-title">Duas formas de <em>se reinventar.</em></h2><p>Escolha o caminho que combina com o que você imagina para os seus fios.</p></div><div class="specialty-tabs" role="tablist" aria-label="Especialidades em destaque"><button class="specialty-tab" type="button" role="tab" id="tab-loiros" aria-controls="panel-loiros" aria-selected="true" tabindex="0"><span>01</span> LOIROS <span aria-hidden="true">↗</span></button><button class="specialty-tab" type="button" role="tab" id="tab-mega" aria-controls="panel-mega" aria-selected="false" tabindex="-1"><span>02</span> MEGA HAIR <span aria-hidden="true">↗</span></button></div><div class="specialty-panel" role="tabpanel" id="panel-loiros" aria-labelledby="tab-loiros"><div class="specialty-photo"><img src={image('loiro-longo.jpg')} width="600" height="640" alt="Loiro longo com ondas produzido na PerVoí" loading="lazy" /><span>01 / LOIROS</span></div><div class="specialty-detail"><span class="eyebrow">COR, LUZ E MOVIMENTO</span><h3>O loiro que <em>acompanha você.</em></h3><p>Mechas, luzes e colorimetria se encontram com tratamentos capilares. Conte à equipe o resultado que deseja e descubra as possibilidades para seus fios.</p><a class="button-dark" href={wa('loiros')} target="_blank" rel="noopener noreferrer">FALAR SOBRE LOIROS <span aria-hidden="true">↗</span></a></div></div><div class="specialty-panel" role="tabpanel" id="panel-mega" aria-labelledby="tab-mega" hidden><div class="specialty-photo"><img src={image('mega-portrait.jpg')} width="480" height="640" alt="Cliente da PerVoí mostrando cabelo longo com mechas claras" loading="lazy" /><span>02 / MEGA HAIR</span></div><div class="specialty-detail"><span class="eyebrow">COMPRIMENTO EM MOVIMENTO</span><h3>Mais cabelo. <em>Mais possibilidades.</em></h3><p>O mega hair está entre os destaques da PerVoí. Converse com a equipe sobre o comprimento, o visual e o atendimento que você procura.</p><a class="button-dark" href={wa('mega hair')} target="_blank" rel="noopener noreferrer">FALAR SOBRE MEGA HAIR <span aria-hidden="true">↗</span></a></div></div></div></section>
+
+      <section class="work" id="trabalhos" aria-labelledby="work-title"><div class="section-shell"><div class="work-heading"><span class="eyebrow">03 / TRABALHOS REAIS</span><h2 id="work-title">Feitos aqui. <em>Vistos por você.</em></h2><p>Uma seleção do perfil oficial da PerVoí. Cada imagem leva à publicação original.</p></div></div><div class="work-track" aria-label="Trabalhos publicados pela PerVoí; deslize para ver mais">{works.map((item, i) => <a class="work-item" href={item.url} target="_blank" rel="noopener noreferrer" aria-label={`${item.label}, abrir publicação no Instagram`}><div class="work-image"><img src={image(item.src)} width={item.width} height={item.height} alt={item.alt} loading="lazy" /></div><div class="work-caption"><span>0{i + 1} / {item.label}</span><span aria-hidden="true">↗</span></div></a>)}</div><div class="section-shell work-bottom"><span>DESLIZE PARA VER MAIS →</span><a class="text-link" href={instagram} target="_blank" rel="noopener noreferrer">ABRIR INSTAGRAM <span aria-hidden="true">↗</span></a></div></section>
+
+      <section class="care" aria-labelledby="care-title"><div class="section-shell care-grid"><div class="care-title"><span class="eyebrow">04 / ALÉM DO CABELO</span><h2 id="care-title">Um lugar. <em>Muitas formas de se cuidar.</em></h2><p>Beleza, estética, noiva e spa em um mesmo endereço.</p></div><div class="care-list"><div><span>01</span><strong>Dia da noiva</strong><p>Preparação para noivas, madrinhas e celebrações.</p></div><div><span>02</span><strong>Spa & bem-estar</strong><p>Momentos de relaxamento e cuidado corporal.</p></div><div><span>03</span><strong>Estética</strong><p>Cuidados faciais e corporais.</p></div><div><span>04</span><strong>Beleza no dia a dia</strong><p>Cabelo, unhas e sobrancelhas.</p></div></div></div></section>
+
+      <section class="place" id="casa" aria-labelledby="place-title"><div class="place-picture"><img src={image('fachada-pervoi-hq.jpg')} width="1241" height="894" alt="Fachada da PerVoí em São José dos Campos" loading="lazy" /><span>UM ENDEREÇO PARA VOLTAR</span></div><div class="place-details"><span class="eyebrow">05 / ENCONTRE A PERVOÍ</span><h2 id="place-title">A beleza tem <em>endereço.</em></h2><address>Av. Dr. João Baptista Soares de Queiroz Júnior, 2211<br />Jardim das Indústrias<br />São José dos Campos · SP · 12240-000</address><a class="text-link" href={maps} target="_blank" rel="noopener noreferrer">VER NO MAPA <span aria-hidden="true">↗</span></a></div></section>
+
+      <section class="closing" id="contato" aria-labelledby="closing-title"><div class="section-shell"><span class="eyebrow">06 / SEU PRÓXIMO CAPÍTULO</span><h2 id="closing-title">É a sua vez <em>de brilhar.</em></h2><div class="closing-bottom"><p>Fale com a equipe para combinar seu atendimento na PerVoí.</p><a href={wa('um horário')} target="_blank" rel="noopener noreferrer">AGENDAR PELO WHATSAPP <span aria-hidden="true">↗</span></a></div></div></section>
+    </main>
+
+    <footer class="site-footer"><div class="section-shell footer-top"><a class="footer-logo" href="#inicio">PerVoí</a><div><a href={instagram} target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a><a href={wa('um horário')} target="_blank" rel="noopener noreferrer">WHATSAPP ↗</a><a href="tel:+551239360328">(12) 3936-0328</a></div></div><div class="section-shell footer-bottom"><span>© {new Date().getFullYear()} PERVOÍ</span><span>SÃO JOSÉ DOS CAMPOS · SP</span><a href="#inicio">VOLTAR AO TOPO ↑</a></div></footer>
+
+    <script>
+      const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('.specialty-tab'));
+      const panels = Array.from(document.querySelectorAll<HTMLElement>('.specialty-panel'));
+      function selectTab(tab: HTMLButtonElement) {
+        tabs.forEach((item) => { const selected = item === tab; item.setAttribute('aria-selected', String(selected)); item.tabIndex = selected ? 0 : -1; });
+        panels.forEach((panel) => { panel.hidden = panel.id !== tab.getAttribute('aria-controls'); });
+      }
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => selectTab(tab));
+        tab.addEventListener('keydown', (event) => {
+          if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+          event.preventDefault();
+          const next = tabs[(index + (event.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+          selectTab(next); next.focus();
+        });
+      });
+    </script>
+  </body>
+</html>
